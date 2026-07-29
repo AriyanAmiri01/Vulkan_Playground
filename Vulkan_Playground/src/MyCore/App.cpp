@@ -22,4 +22,5 @@ void app::go()
 }
 
 void app::doFrame()
-{}
+{
+}
