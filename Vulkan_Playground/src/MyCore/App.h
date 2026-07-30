@@ -2,7 +2,10 @@
 // app.h
 #include "MyWin/window.h"
 
+
 #include <vulkan/vulkan.h>
+
+
 
 class app
 {
@@ -13,6 +16,4 @@ public:
 private:
 	MSG msg = {};
 	window myWindow;
-private:
-
 };
