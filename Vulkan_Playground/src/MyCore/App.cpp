@@ -2,11 +2,16 @@
 #include "app.h"
 #include <cassert>
 #include "MyExp/FreeExcept.h"
+#include "MyExp/VkResultCheck.h"
 
 app::app(HINSTANCE xHInstance)
 	:
 	myWindow(xHInstance)
 {}
+
+app::~app()
+{
+}
 
 void app::go()
 {
@@ -48,6 +53,16 @@ void app::go()
 	//the 0 in this function is for where we can pass in a custom memory allocator!
 	VkResult result = vkCreateInstance(&createInfo, 0, &instance);
 	assert(result == VK_SUCCESS);
+
+
+	
+
+	std::cout << "Testing VK_ERROR_INITIALIZATION_FAILED...\n";
+
+	CheckVkResult(VK_ERROR_INITIALIZATION_FAILED);
+
+
+
 
 
 	/* @title Main game loop */

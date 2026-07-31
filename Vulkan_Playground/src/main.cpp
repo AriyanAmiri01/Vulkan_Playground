@@ -2,6 +2,7 @@
 // entryPoint.cpp
 #include "MyCore/app.h"
 #include "MyWin/myConsole.h"
+#include "MyExp/FreeExcept.h"
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine, int nCmdShow)
 {
@@ -12,13 +13,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine,
         app myApp(hInstance);
         myApp.go();
     } catch (freeExcept& e) {
-        // Exception that don't have any origin
         MessageBoxA(nullptr, e.what(), e.GetType(), MB_OK | MB_ICONEXCLAMATION);
-        return -1;
     } catch (...) {
-        // Any type of exception
         MessageBoxA(nullptr, "An unknown exception has occurred", "Any Exception", MB_OK | MB_ICONEXCLAMATION);
-        return -1;
     }
-    return 0;
+
+     return 0;
 }

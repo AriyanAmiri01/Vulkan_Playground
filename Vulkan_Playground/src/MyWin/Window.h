@@ -9,6 +9,7 @@ class window
 {
 public:
 	window(HINSTANCE xHInstance);
+	~window();
 	HWND getHwnd() const;
 	
 	windowProcedure myWindowProcedure;

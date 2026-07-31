@@ -11,9 +11,10 @@ class app
 {
 public:
 	app(HINSTANCE xHInstance);
+	~app();
 	void go();
 	void doFrame();
 private:
-	MSG msg = {};
 	window myWindow;
+	MSG msg = {};
 };

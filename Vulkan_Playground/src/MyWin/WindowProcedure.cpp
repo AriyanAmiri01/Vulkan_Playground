@@ -101,11 +101,11 @@ LRESULT windowProcedure::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPar
             break;
         }
         // Special window messages
-    case (WM_DESTROY):
-        {
-            PostQuitMessage(0);
-            break;
-        }
+    case WM_CLOSE:
+    {
+        PostQuitMessage(0);
+        return 0;
+    }
     case(WM_KILLFOCUS):
         {
             xMyWindow->myKeyboard.ClearState(); // Clear keyboard state when window loses focus

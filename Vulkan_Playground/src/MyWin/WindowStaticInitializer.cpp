@@ -22,7 +22,7 @@ LRESULT windowStaticInitializer::WndStaticProc(HWND hWnd, UINT msg, WPARAM wPara
         // Forward to the instance method
         return self->myWindowProcedure.WndProc(hWnd, msg, wParam, lParam, self);
         //return self->WndProc(hWnd, msg, wParam, lParam);
-    }
-
+     }
+    
     return DefWindowProc(hWnd, msg, wParam, lParam);
 }
