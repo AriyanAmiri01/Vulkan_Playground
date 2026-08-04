@@ -16,6 +16,7 @@ public:
 	windowManager myWindowManager{};
 	MyKeyboard myKeyboard;
 	MyMouse myMouse;
+	HINSTANCE hinstance;
 private:
 	HWND hwnd;
 };

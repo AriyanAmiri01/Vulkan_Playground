@@ -213,7 +213,7 @@ void app::go()
 	}
 
 	
-	// For debug callback
+
 
 
 
@@ -312,9 +312,41 @@ void app::go()
 	VK_CHECK(vkCreateDevice(physicalDevices[selectedDevice], &deviceCreateInfo, 0, &vulkanDevice));
 
 
+	// Surface creation
+	VkWin32SurfaceCreateInfoKHR surfaceCreateInfo{};
+	surfaceCreateInfo.sType = VK_STRUCTURE_TYPE_WIN32_SURFACE_CREATE_INFO_KHR;
+	surfaceCreateInfo.pNext = NULL;
+	surfaceCreateInfo.flags = 0;
+	surfaceCreateInfo.hinstance = myWindow.hinstance;
+	surfaceCreateInfo.hwnd = myWindow.getHwnd();
+
+	VkSurfaceKHR surface = 0;
+	VK_CHECK(vkCreateWin32SurfaceKHR(vulkanInstance, &surfaceCreateInfo, 0, &surface));
+
+	// Query surface format
+	uint32_t surfaceFormatCount = 8;
+	VkSurfaceFormatKHR surfaceFormats[8];
+	VK_CHECK(vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevices[selectedDevice], surface, &surfaceFormatCount, surfaceFormats));
+
+	// Selecting the surface format
+	for (uint32_t i = 0; i < surfaceFormatCount; i++) {
+		//[DEBUG] : printf("Supported Format: %i with color space: %i \n", surfaceFormats[i].format, surfaceFormats[i].colorSpace); 
+	}
+	auto surfaceFormat = surfaceFormats[0];
+
+	// Queury surface Capability
+	VkSurfaceCapabilitiesKHR caps;
+	VK_CHECK(vkGetPhysicalDeviceSurfaceCapabilitiesKHR(physicalDevices[selectedDevice], surface, &caps));
+	
+
+
 
 
 	//Destructor stuffs
+	if (surface != VK_NULL_HANDLE) {
+		vkDestroySurfaceKHR(vulkanInstance, surface, 0);
+	}
+
 	if (debugMessenger != VK_NULL_HANDLE)
 	{
 		DestroyDebugMessenger(vulkanInstance,debugMessenger,nullptr);
@@ -326,7 +358,7 @@ void app::go()
 	{
 		vkDestroyInstance(vulkanInstance, nullptr);
 	}
-	
+
 	
 
 

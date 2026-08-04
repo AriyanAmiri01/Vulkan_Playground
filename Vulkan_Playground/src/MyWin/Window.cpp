@@ -8,6 +8,7 @@ window::window(HINSTANCE xHInstance)
 {
 	windowCreator myWindowCreator(xHInstance, this);
 	hwnd = myWindowCreator.getWindowHandler();
+    hinstance = xHInstance;
 }
 window::~window()
 {
