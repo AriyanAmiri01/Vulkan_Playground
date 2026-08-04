@@ -1,3 +1,4 @@
-﻿  WindowProcedure.cpp
-C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyWin\WindowProcedure.cpp(134,16): warning C4189: 'pos': local variable is initialized but not referenced
+﻿  App.cpp
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyCore\App.cpp(13,8): warning C4100: 'pUserData': unreferenced parameter
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyCore\App.cpp(224,26): warning C4245: 'initializing': conversion from 'int' to 'uint32_t', signed/unsigned mismatch
   Vulkan_Playground.vcxproj -> C:\Users\ariya\source\repos\Vulkan_Playground\build\bin\x64\Debug\Vulkan_Playground.exe

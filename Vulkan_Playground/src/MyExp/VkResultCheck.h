@@ -11,7 +11,7 @@ void HandleVkResult(VkResult xResult) {
     if (xResult == VK_SUCCESS) {
         return;
     }
-    
+
     // Get the Result messaage
     const char* message = "Unknown VkResult.";
     switch (xResult)
@@ -277,4 +277,4 @@ void HandleVkResult(VkResult xResult) {
     }
 }
 
-#define CheckVkResult(x) HandleVkResult(x);
+#define VK_CHECK(x) HandleVkResult(x);
