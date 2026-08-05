@@ -17,6 +17,6 @@ public:
 	MyKeyboard myKeyboard;
 	MyMouse myMouse;
 	HINSTANCE hinstance;
-private:
 	HWND hwnd;
+private:
 };

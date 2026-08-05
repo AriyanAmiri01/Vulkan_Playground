@@ -165,7 +165,12 @@
     <ClCompile Include="src\MyCore\App.cpp" />
     <ClCompile Include="src\MyExp\FreeExcept.cpp" />
     <ClCompile Include="src\MyExp\MyException.cpp" />
+    <ClCompile Include="src\MyExp\VkResultCheck.cpp" />
     <ClCompile Include="src\MyExp\windowException.cpp" />
+    <ClCompile Include="src\MyVul\vulkanApp.cpp" />
+    <ClCompile Include="src\MyVul\vulkanInstance.cpp" />
+    <ClCompile Include="src\MyVul\vulkanDevices.cpp" />
+    <ClCompile Include="src\MyVul\vulkanSurface.cpp" />
     <ClCompile Include="src\MyWin\MyConsole.cpp" />
     <ClCompile Include="src\MyWin\MyKeyboard.cpp" />
     <ClCompile Include="src\MyWin\MyMouse.cpp" />
@@ -183,6 +188,10 @@
     <ClInclude Include="src\MyExp\VkResultCheck.h" />
     <ClInclude Include="src\MyExp\windowException.h" />
     <ClInclude Include="src\MyHeaders.h" />
+    <ClInclude Include="src\MyVul\vulkanApp.h" />
+    <ClInclude Include="src\MyVul\vulkanInstance.h" />
+    <ClInclude Include="src\MyVul\vulkanDevices.h" />
+    <ClInclude Include="src\MyVul\vulkanSurface.h" />
     <ClInclude Include="src\MyWin\MyConsole.h" />
     <ClInclude Include="src\MyWin\MyKeyboard.h" />
     <ClInclude Include="src\MyWin\MyMouse.h" />
