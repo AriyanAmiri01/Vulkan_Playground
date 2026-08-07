@@ -167,6 +167,7 @@
     <ClCompile Include="src\MyExp\MyException.cpp" />
     <ClCompile Include="src\MyExp\VkResultCheck.cpp" />
     <ClCompile Include="src\MyExp\windowException.cpp" />
+    <ClCompile Include="src\MyVul\mySwapchain.cpp" />
     <ClCompile Include="src\MyVul\vulkanApp.cpp" />
     <ClCompile Include="src\MyVul\vulkanInstance.cpp" />
     <ClCompile Include="src\MyVul\vulkanDevices.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="src\MyExp\VkResultCheck.h" />
     <ClInclude Include="src\MyExp\windowException.h" />
     <ClInclude Include="src\MyHeaders.h" />
+    <ClInclude Include="src\MyVul\mySwapchain.h" />
     <ClInclude Include="src\MyVul\vulkanApp.h" />
     <ClInclude Include="src\MyVul\vulkanInstance.h" />
     <ClInclude Include="src\MyVul\vulkanDevices.h" />

@@ -1,3 +1,2 @@
-﻿  vulkanDevices.cpp
-C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyVul\vulkanDevices.cpp(9,26): warning C4245: 'initializing': conversion from 'int' to 'uint32_t', signed/unsigned mismatch
+﻿  vulkanSurface.cpp
   Vulkan_Playground.vcxproj -> C:\Users\ariya\source\repos\Vulkan_Playground\build\bin\x64\Debug\Vulkan_Playground.exe

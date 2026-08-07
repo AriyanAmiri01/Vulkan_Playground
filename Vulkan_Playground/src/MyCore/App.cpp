@@ -29,17 +29,21 @@ void app::go()
 		EXCEPT_FREE("Failed to get vulkan instance");
 	}
 
-	// Create Physical and logical device
-	myVulkanDevices = std::make_shared<MyVulkanDevices>(myVulkanInstance.vulkanInstance);
 
-	// Create Vulkan Surface
-	myVkSurface = std::make_shared<MyVkSurface>(
-		myWindow.hinstance,
-		myWindow.hwnd,
-		myVulkanInstance.vulkanInstance,
-		myVulkanDevices->physicalDeviceHnd);
-		
-	
+
+
+	// Create Physical and logical device
+	auto clientRect = myWindow.getClientRect();
+	myVulkanDevices = 
+		std::make_shared<MyVulkanDevices>(
+			myVulkanInstance.vulkanInstance,
+			myWindow.hinstance,
+			myWindow.hwnd,
+			clientRect.clientWidth,
+			clientRect.clientHeight
+		);
+
+
 
 
 	/* @title Main game loop */

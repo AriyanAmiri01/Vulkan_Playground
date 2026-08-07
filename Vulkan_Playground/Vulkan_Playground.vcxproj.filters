@@ -75,6 +75,9 @@
     <ClCompile Include="src\MyVul\vulkanSurface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\MyVul\mySwapchain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MyCore\App.h">
@@ -132,6 +135,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\MyVul\vulkanSurface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyVul\mySwapchain.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

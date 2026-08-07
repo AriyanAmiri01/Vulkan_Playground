@@ -1,12 +1,19 @@
 #include "vulkanDevices.h"
 
-MyVulkanDevices::MyVulkanDevices(VkInstance xVulkanInstance)
+
+MyVulkanDevices::MyVulkanDevices(
+	VkInstance xVulkanInstance,
+	HINSTANCE xInstance,
+	HWND xHwnd,
+	uint32_t xWndW,	/* [TODO] After separating surface and swapchain settings,  remove this parameter since only swapchain configuration needs it */ 
+	uint32_t xWndH
+)
 {
 
 	// Create Physical Device
 	VkPhysicalDevice physicalDevices[16];
 	uint32_t physicalDeviceCount = 16;
-	uint32_t selectedDevice = -1;
+	uint32_t selectedDevice = UINT32_MAX;
 
 	// Query Physical Devices
 	vkEnumeratePhysicalDevices(xVulkanInstance, &physicalDeviceCount, physicalDevices);
@@ -28,7 +35,7 @@ MyVulkanDevices::MyVulkanDevices(VkInstance xVulkanInstance)
 			// return physicalDevice[i];
 		}
 	}
-	if (selectedDevice != -1) {
+	if (selectedDevice != UINT32_MAX) {
 		// Fix this in the function definition by returning instead of creating stupid if statement
 	} else if (physicalDeviceCount > 0)
 	{
@@ -45,29 +52,55 @@ MyVulkanDevices::MyVulkanDevices(VkInstance xVulkanInstance)
 	// Store it
 	physicalDeviceHnd = physicalDevices[selectedDevice];
 
+	// Surface Creation
+		// Create Vulkan Surface
+	myVkSurface = std::make_shared<MyVkSurface>(
+		xInstance,
+		xHwnd,
+		xVulkanInstance,
+		physicalDeviceHnd,
+		xWndW,
+		xWndH);
+
+
 	// Create QueueFamilies Structure
 	VkQueueFamilyProperties queues[16];
 	uint32_t queuesCount = ARRAYSIZE(queues);
-	uint32_t selectedQueue = 0;
+	uint32_t selectedQueue = UINT32_MAX;
 
 	// Query Queue Familites
 	vkGetPhysicalDeviceQueueFamilyProperties(physicalDevices[selectedDevice], &queuesCount, queues);
-
+	
 	// Select right queue
 	for (uint32_t i = 0; i < queuesCount; i++)
 	{
-		//check if this queue is a graphics queue
-		if (queues[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) {
+		// Check presentation capability
+		VkBool32 supportsPresentation = VK_FALSE;
+		VK_CHECK(vkGetPhysicalDeviceSurfaceSupportKHR(
+				physicalDeviceHnd,
+				i,
+				myVkSurface->surface,
+				&supportsPresentation
+			)
+		);
+
+		// Check for Graphic cability
+		const bool supportsGraphics = (queues[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) != 0;
+		
+		if (supportsGraphics && supportsPresentation == VK_TRUE)
+		{
 			selectedQueue = i;
 			break;
-			//return i;
-		} else {
-			printf("No Graphics Queues found, is this a Compute only device?");
-			//return VK_QUEUE_FAMILY_IGNORED;
 		}
+	}
+	if (selectedQueue == UINT32_MAX)
+	{
+		EXCEPT_FREE("No queue family supports both graphics and presentation.");
 	}
 
 	// Store it 
+	deviceIndex = selectedDevice;
+	queueFamilyIndex = selectedQueue;
 	VkQueueFamilyProperties queueFamily = queues[selectedQueue];
 
 	// Add Queue information
@@ -100,6 +133,24 @@ MyVulkanDevices::MyVulkanDevices(VkInstance xVulkanInstance)
 
 	// Create Vulkan Device
 	VK_CHECK(vkCreateDevice(physicalDevices[selectedDevice], &deviceCreateInfo, 0, &vulkanDeviceHnd));
+
+	// Retriving queuers
+	VkQueue graphicsQueueHnd = VK_NULL_HANDLE;
+	VkQueue presentQueueHnd = VK_NULL_HANDLE;
+
+	vkGetDeviceQueue(
+		vulkanDeviceHnd,
+		selectedQueue,
+		0,
+		&graphicsQueueHnd
+	);
+	if (graphicsQueueHnd == VK_NULL_HANDLE)
+	{
+		EXCEPT_FREE("Failed to retrieve graphics queue.");
+	}
+	presentQueueHnd = graphicsQueueHnd;	// I used the same queue for both presentation and graphics
+
+
 }
 
 MyVulkanDevices::~MyVulkanDevices()
