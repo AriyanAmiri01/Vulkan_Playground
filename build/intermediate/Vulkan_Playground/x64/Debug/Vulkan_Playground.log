@@ -1,3 +1,2 @@
-﻿  swapchain.cpp
-  vulkanDevices.cpp
+﻿  App.cpp
   Vulkan_Playground.vcxproj -> C:\Users\ariya\source\repos\Vulkan_Playground\build\bin\x64\Debug\Vulkan_Playground.exe

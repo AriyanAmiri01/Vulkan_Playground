@@ -3,12 +3,12 @@
 #include "MyWin/window.h"
 #include <memory>
 
-#include "MyVul/shader_loader.h"
+
 
 #include "MyVul/vulkanInstance.h"
 #include "MyVul/vulkanDevices.h"
 #include "MyVul/swapchain.h"
-
+#include "MyVul/pipeline.h"
 
 class app
 {
@@ -24,5 +24,5 @@ public:
 	MyVulkanInstance myVulkanInstance;
 	std::shared_ptr<MyVulkanDevices> myVulkanDevices;
 	std::shared_ptr<MySwapchain> mySwapchain;
-	
+	std::shared_ptr<MyPipeline> myPipeline;
 };

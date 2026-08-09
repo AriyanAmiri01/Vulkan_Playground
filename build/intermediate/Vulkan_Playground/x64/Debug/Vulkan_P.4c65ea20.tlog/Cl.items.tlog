@@ -4,6 +4,7 @@ C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyExp\FreeEx
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyExp\MyException.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\MyException.obj
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyExp\VkResultCheck.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\VkResultCheck.obj
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyExp\windowException.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\windowException.obj
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyVul\pipeline.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\pipeline.obj
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyVul\shader_loader.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\shader_loader.obj
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyVul\swapchain.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\swapchain.obj
 C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\MyVul\vulkanApp.cpp;C:\Users\ariya\source\repos\Vulkan_Playground\build\intermediate\Vulkan_Playground\x64\Debug\vulkanApp.obj
