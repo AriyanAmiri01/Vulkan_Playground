@@ -155,4 +155,17 @@ MySwapchain::~MySwapchain()
             nullptr
         );
     }
+
+    // Destroy Render Pass
+    vkDestroyRenderPass(
+        vkDeviceHnd,
+        renderPass,
+        nullptr
+    );
+
+    vkDestroySwapchainKHR(
+        vkDeviceHnd,
+        swapchain,
+        nullptr
+    );
 }

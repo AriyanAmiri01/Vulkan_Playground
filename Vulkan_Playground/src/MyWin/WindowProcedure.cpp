@@ -76,10 +76,23 @@ LRESULT windowProcedure::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lPar
         }
         // Keyboard input messages
     case(WM_KEYDOWN):
+    {
+        // Handle Termination
+        const bool ctrlDown =
+            (GetKeyState(VK_CONTROL) & 0x8000) != 0;
+
+        const bool shiftDown =
+            (GetKeyState(VK_SHIFT) & 0x8000) != 0;
+
+        if (wParam == 'T' && ctrlDown && shiftDown)
         {
-            handleKeyDown(wParam, lParam, xMyWindow);
-            break;
+            PostQuitMessage(0);
+            return 0;
         }
+
+        handleKeyDown(wParam, lParam, xMyWindow);
+        break;
+    }
     case(WM_KEYUP):
         {
             handleKeyUp(wParam, xMyWindow);
@@ -144,6 +157,7 @@ void windowProcedure::handleChar(WPARAM wParam, window* xMyWindow)
 void windowProcedure::handleKeyDown(WPARAM wParam, LPARAM lParam, window* xMyWindow)
 {
     // Handle key press, ignoring autorepeat if disabled
+
     if(!((lParam & 0x40000000) || (xMyWindow->myKeyboard.AutorepeatIsEnable())))
     {
         xMyWindow->myKeyboard.KeyPressSignal(static_cast<unsigned char>(wParam));

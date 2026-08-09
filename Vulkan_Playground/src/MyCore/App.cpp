@@ -240,12 +240,6 @@ void app::go()
 		&graphicsPipeline));
 
 
-
-
-
-
-
-
 	// destructors 
 	vkDestroyShaderModule(myVulkanDevices->vulkanDeviceHnd, vertexShaderModule, nullptr);
 	vkDestroyShaderModule(myVulkanDevices->vulkanDeviceHnd, fragmentShaderModule, nullptr);

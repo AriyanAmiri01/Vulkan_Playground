@@ -156,6 +156,6 @@ MyVulkanDevices::MyVulkanDevices(
 MyVulkanDevices::~MyVulkanDevices()
 {
 	if (vulkanDeviceHnd != VK_NULL_HANDLE) {
-		vkDestroyDevice(vulkanDeviceHnd, 0);
+		vkDestroyDevice(vulkanDeviceHnd, nullptr);
 	}
 }
