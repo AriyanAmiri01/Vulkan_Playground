@@ -161,13 +161,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assets\shaders\frag_shader.frag">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="assets\shaders\vertex_shader.vert">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\MyCore\App.cpp" />
     <ClCompile Include="src\MyExp\FreeExcept.cpp" />
     <ClCompile Include="src\MyExp\MyException.cpp" />
     <ClCompile Include="src\MyExp\VkResultCheck.cpp" />
     <ClCompile Include="src\MyExp\windowException.cpp" />
-    <ClCompile Include="src\MyVul\mySwapchain.cpp" />
+    <ClCompile Include="src\MyVul\shader_loader.cpp" />
+    <ClCompile Include="src\MyVul\swapchain.cpp" />
     <ClCompile Include="src\MyVul\vulkanApp.cpp" />
     <ClCompile Include="src\MyVul\vulkanInstance.cpp" />
     <ClCompile Include="src\MyVul\vulkanDevices.cpp" />
@@ -189,7 +202,8 @@
     <ClInclude Include="src\MyExp\VkResultCheck.h" />
     <ClInclude Include="src\MyExp\windowException.h" />
     <ClInclude Include="src\MyHeaders.h" />
-    <ClInclude Include="src\MyVul\mySwapchain.h" />
+    <ClInclude Include="src\MyVul\shader_loader.h" />
+    <ClInclude Include="src\MyVul\swapchain.h" />
     <ClInclude Include="src\MyVul\vulkanApp.h" />
     <ClInclude Include="src\MyVul\vulkanInstance.h" />
     <ClInclude Include="src\MyVul\vulkanDevices.h" />

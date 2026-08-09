@@ -10,7 +10,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR pCmdLine,
         // We run the program
         myConsole console1;
         console1.go();
-        printf("No body loves me! \n");
+        printf(" ---=== No body loves me! =( ===---\n");
         app myApp(hInstance);
         myApp.go();
     } catch (freeExcept& e) {

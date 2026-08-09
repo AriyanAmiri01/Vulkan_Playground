@@ -232,9 +232,9 @@ MyVkSurface::MyVkSurface(
 			swapchainSupport.capabilities,
 			xWndW,
 			xWndH);
+	
+	//TestSwapConfig();
 
-	// Test stuffs
-	TestSwapConfig();
 }
 
 

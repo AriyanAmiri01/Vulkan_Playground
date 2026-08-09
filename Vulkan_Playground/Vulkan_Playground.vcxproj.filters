@@ -75,7 +75,16 @@
     <ClCompile Include="src\MyVul\vulkanSurface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\MyVul\mySwapchain.cpp">
+    <ClCompile Include="src\MyVul\swapchain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assets\shaders\vertex_shader.vert">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="assets\shaders\frag_shader.frag">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MyVul\shader_loader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -137,7 +146,10 @@
     <ClInclude Include="src\MyVul\vulkanSurface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MyVul\mySwapchain.h">
+    <ClInclude Include="src\MyVul\swapchain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\MyVul\shader_loader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

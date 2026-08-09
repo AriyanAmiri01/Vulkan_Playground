@@ -11,7 +11,7 @@ struct SwapchainSupportDetails
 	std::vector<VkPresentModeKHR> presentModes;
 };
 
-SwapchainSupportDetails QuerySwapchainSupport(
+SwapchainSupportDetails ArQuerySwapchainSupport(
 	VkPhysicalDevice physicalDevice,
 	VkSurfaceKHR surface);
 

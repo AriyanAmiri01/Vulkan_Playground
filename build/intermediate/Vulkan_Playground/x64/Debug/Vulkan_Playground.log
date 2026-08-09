@@ -1,2 +1,7 @@
-﻿  vulkanSurface.cpp
+﻿  App.cpp
+  swapchain.cpp
+  main.cpp
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\main.cpp(7,86): warning C4100: 'nCmdShow': unreferenced parameter
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\main.cpp(7,72): warning C4100: 'pCmdLine': unreferenced parameter
+C:\Users\ariya\source\repos\Vulkan_Playground\Vulkan_Playground\src\main.cpp(7,51): warning C4100: 'hPrevInstance': unreferenced parameter
   Vulkan_Playground.vcxproj -> C:\Users\ariya\source\repos\Vulkan_Playground\build\bin\x64\Debug\Vulkan_Playground.exe
